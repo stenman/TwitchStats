@@ -1,5 +1,10 @@
 package com.example.twitchstats;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.FormatStyle;
+import java.time.temporal.TemporalUnit;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -17,7 +22,7 @@ public class ExecutorTimer {
 
 	private static final long POLL_FREQUENZY = 3;
 
-	public ExecutorTimer(Stats stats) {
+	public ExecutorTimer(Stats stats, UpdateTime updateTime) {
 
 		executor.scheduleWithFixedDelay(new Runnable() {
 			@Override
@@ -26,7 +31,8 @@ public class ExecutorTimer {
 					@Override
 					public void run() {
 						try {
-							stats.updateStats();
+							stats.update();
+							updateTime.update();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

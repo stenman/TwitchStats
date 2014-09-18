@@ -13,7 +13,7 @@ public class Stats {
 
 	private final ReadOnlyStringWrapper numberOfViewers = new ReadOnlyStringWrapper(twitchCaller.getUpdatedStats());
 
-	public void updateStats() {
+	public void update() {
 		numberOfViewers.set(twitchCaller.getUpdatedStats());
 	}
 

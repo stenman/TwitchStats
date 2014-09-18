@@ -18,12 +18,13 @@ import org.springframework.stereotype.Component;
 
 public class TwitchStatsMain extends Application {
 
-	// TODO: 1. updated x seconds ago or last update: hhmmss
-	// TODO: 2. javafx on close (full terminate)
+	// TODO: Implement DI
 
 	private static Stats stats = new Stats();
-	private ExecutorTimer executorTimer = new ExecutorTimer(stats);
+	private static UpdateTime updateTime = new UpdateTime();
+	private ExecutorTimer executorTimer = new ExecutorTimer(stats, updateTime);
 	private static ViewersLabel viewersLabel = new ViewersLabel(stats);
+	private static UpdateTimeLabel updateTimeLabel = new UpdateTimeLabel(updateTime);
 
 	public static void main(String[] args) {
 		launch(args);
@@ -36,6 +37,7 @@ public class TwitchStatsMain extends Application {
 		VBox root = new VBox(10);
 		root.setAlignment(Pos.CENTER);
 		root.getChildren().add(viewersLabel);
+		root.getChildren().add(updateTimeLabel);
 		root.setStyle("-fx-background-color: cornsilk; -fx-padding: 20; -fx-font-size: 20;");
 		primaryStage.setScene(new Scene(root, 300, 100));
 		primaryStage.show();
