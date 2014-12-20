@@ -1,9 +1,5 @@
 package com.example.twitchstats;
 
-import javax.inject.Inject;
-
-import org.springframework.stereotype.Component;
-
 import javafx.beans.property.ReadOnlyStringProperty;
 import javafx.beans.property.ReadOnlyStringWrapper;
 

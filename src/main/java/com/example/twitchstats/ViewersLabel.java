@@ -1,9 +1,5 @@
 package com.example.twitchstats;
 
-import javax.inject.Inject;
-
-import org.springframework.stereotype.Component;
-
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.Label;
 

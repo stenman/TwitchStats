@@ -1,16 +1,5 @@
 package com.example.twitchstats;
 
-import java.util.Random;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
-import org.json.JSONObject;
-import org.springframework.stereotype.Component;
 
 public class TwitchCaller {
 
@@ -45,9 +34,11 @@ public class TwitchCaller {
 
 		// return numberOfViewers;
 
-		Random rand = new Random();
-
-		int randomNum = rand.nextInt((10 - 1) + 1) + 1;
-		return String.valueOf(randomNum);
+//		Random rand = new Random();
+//
+//		int randomNum = rand.nextInt((10 - 1) + 1) + 1;
+//		return String.valueOf(randomNum);
+		
+		return "Hej";
 	}
 }

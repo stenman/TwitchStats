@@ -1,7 +1,5 @@
 package com.example.twitchstats;
 
-import java.time.LocalTime;
-
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.Label;
 
