@@ -9,6 +9,9 @@ public class Stats {
 
 	private final ReadOnlyStringWrapper numberOfViewers = new ReadOnlyStringWrapper(twitchCaller.getUpdatedStats());
 
+	public Stats() {
+	}
+
 	public void update() {
 		numberOfViewers.set(twitchCaller.getUpdatedStats());
 	}
